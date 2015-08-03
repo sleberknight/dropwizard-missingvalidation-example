@@ -5,7 +5,7 @@ First, run the application as-is and do a `POST` to the `/person` resource with 
 in the `Person` class. For example, use [httpie](http://www.slideshare.net/scottleber/htt-pie-minitalk) to submit a
 valid `POST` request:
 
-```JSON
+```http
 $ http -v http://localhost:8080/person firstName=Bob lastName=Sackamano
 POST /person HTTP/1.1
 Accept: application/json
@@ -35,7 +35,7 @@ Location: http://localhost:8080/person/2
 
 Now, submit an _invalid_ request, we get a `422 Unprocessable Entity` response:
 
-```JSON
+```http
 $ http -v http://localhost:8080/person firstName=Bob
 POST /person HTTP/1.1
 Accept: application/json
@@ -67,7 +67,7 @@ of a `422` you will get a `201 Created`, because validation has been "disabled" 
 the `JacksonFeature`. See code comments in the POM file and `PersonResource` for more details. Here's the output,
 showing that validation did not actually occur:
 
-```JSON
+```http
 $ http -v http://localhost:8080/person firstName=Bob
 Accept: application/json
 Accept-Encoding: gzip, deflate, compress
