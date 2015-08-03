@@ -1,0 +1,13 @@
+# Take default settings for servers, etc.
+
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    com.example: DEBUG
+
+  appenders:
+    - type: console
